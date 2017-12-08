@@ -40,6 +40,7 @@ namespace QuirkyBookRental.Controllers
 
         public ActionResult Edit(int id)
         {
+            var x = "";
             var genre = _db.Genres.Find(id);
             return View(genre);
         }
