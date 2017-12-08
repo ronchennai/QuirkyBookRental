@@ -1,0 +1,63 @@
+﻿@model QuirkyBookRental.Models.Genre
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<style type="text/css">
+    .text-on-pannel {
+        background: #fff none repeat scroll 0 0;
+        height: auto;
+        margin-left: 20px;
+        padding: 3px 5px;
+        position: absolute;
+        margin-top: -47px;
+        border: 1px solid #337ab7;
+        border-radius: 8px;
+    }
+
+    .panel {
+        /* for text on pannel */
+        margin-top: 27px !important;
+    }
+
+    .panel-body {
+        padding-top: 30px !important;
+    }
+</style>
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true) 
+    @Html.HiddenFor(model => model.Id) 
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Genre </strong></h3>
+                <p>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Name, new { htmlattributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div><br />
+                    <div>
+                        @*<a type="submit" href="@Url.Action("Edit")" class="btn btn-info btn-lg">
+                            <span class="glyphicon glyphicon-floppy-save"></span> Update
+                        </a>*@
+                        <button type="submit" class="btn btn-info">
+                            <i class="glyphicon glyphicon-floppy-save"></i>  
+                        </button>
+                        @*<input type="submit" value="Update" class="btn btn-info btn-sm"  />*@
+                        @*<span class="glyphicon glyphicon-plus"></span>
+                        <span>Update</span> />*@ 
+                    </div> 
+                </p>
+            </div>
+        </div>
+    </div>
+
+}
+
